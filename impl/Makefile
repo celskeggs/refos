@@ -89,7 +89,7 @@ docs: generate-rpc clean
 
 design:
 	@echo "[DESIGN] Generating RefOS procotol design document..."
-	cd projects/refos/design/; make clean; make
+	cd refos/design/; make clean; make
 	@echo "[DESIGN] OK. Please take a look at file://$(PWD)/projects/refos/design/paper.pdf"
 
 # QEMU simulation helpers.
