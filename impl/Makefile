@@ -15,6 +15,8 @@ EXTRAVERSION = 1
 
 lib-dirs:=libs
 
+realall: custom
+
 # The main target we want to generate
 all: generate-rpc refos
 
@@ -62,6 +64,10 @@ refos: $(BUILD_BASE)/file_server/archive.o $(BUILD_BASE)/process_server/archive.
 	@echo "[STAGE] ${IMAGE_ROOT}/refos-image"
 	cp -f ${STAGE_BASE}/bin/process_server ${IMAGE_ROOT}/refos-image
 endif
+
+custom: custom_server common
+	@echo "[STAGE] ${IMAGE_ROOT}/refos-image"
+	cp -f ${STAGE_BASE}/bin/custom_server ${IMAGE_ROOT}/refos-image
 
 # Generate RPC stubs.
 generate-rpc:
